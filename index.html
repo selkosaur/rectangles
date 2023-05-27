@@ -26,7 +26,7 @@
       </noscript>
       <section class="grid-container"></section>
       <section class="text-container">
-        <h1 class="border-b-3 mb-0">Rectangles</h1>
+        <h1 class="border-b-3 mb-0 display-date"></h1>
         <p>There are 144 rectangles.</p>
         <p>Each rectangle represents 10 minutes of your day.</p>
         <div class="flex flex-wrap items-center">
@@ -44,6 +44,7 @@
               class="m-1 js-hover cursor-pointer"
               title="30 rectangles - 5 hours"
               data-rectangles="30"
+              data-tippy-placement="right"
             >
               Average psilocybin mushroom trip
             </li>
@@ -51,6 +52,7 @@
               class="m-1 js-hover cursor-pointer"
               title="45 rectangles - 7.5 hours"
               data-rectangles="45"
+              data-tippy-placement="right"
             >
               A good night's sleep for adults
             </li>
@@ -58,6 +60,7 @@
               class="m-1 js-hover cursor-pointer"
               title="48 rectangles - 8 hours"
               data-rectangles="48"
+              data-tippy-placement="right"
             >
               Average workday
             </li>
@@ -65,28 +68,115 @@
               class="m-1 js-hover cursor-pointer"
               title="96 rectangles - 16 hours"
               data-rectangles="96"
+              data-tippy-placement="right"
             >
               Intermittent fasting (16/8)
             </li>
           </ul>
         </div>
         <section class="text-center p-1 mt-1 linkblock">
-          <a href="?full_screen=true" title="Toggle full screen" class="m-1">
+          <a href="?full_screen=true" class="m-1">
             <!-- prettier ignore -->
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 24 24"
-              fill="none"
-              version="1.1"
-              id="svg10"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:svg="http://www.w3.org/2000/svg"
-            >
-              <defs id="defs14" />
-              <g id="g698">
+            <button title="Toggle full screen">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                version="1.1"
+                id="svg10"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs14" />
+                <g id="g698">
+                  <path
+                    d="M 21,9 V 3 h -6"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    id="path2"
+                  />
+                  <path
+                    d="m 3,15 v 6 h 6"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    id="path4"
+                  />
+                  <path
+                    d="m 21,3 -7.5,7.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    id="path6"
+                  />
+                  <path
+                    d="M 10.5,13.5 3,21"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    id="path8"
+                  />
+                </g>
+                <g id="g708" transform="rotate(90,12,12)">
+                  <path
+                    d="M 21,9 V 3 h -6"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    id="path700"
+                  />
+                  <path
+                    d="m 3,15 v 6 h 6"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    id="path702"
+                  />
+                  <path
+                    d="m 21,3 -7.5,7.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    id="path704"
+                  />
+                  <path
+                    d="M 10.5,13.5 3,21"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    id="path706"
+                  />
+                </g>
+              </svg>
+            </button>
+          </a>
+          <a href="about.html" class="m-1">
+            <button title="Behind-the-scenes details">
+              <!-- prettier ignore -->
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                version="1.1"
+                id="svg8"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs12" />
                 <path
-                  d="M 21,9 V 3 h -6"
+                  d="M 12,22 C 17.5,22 22,17.5 22,12 22,6.5 17.5,2 12,2 6.5,2 2,6.5 2,12 2,17.5 6.5,22 12,22 Z"
                   stroke="currentColor"
                   stroke-width="1.5"
                   stroke-linecap="round"
@@ -94,128 +184,46 @@
                   id="path2"
                 />
                 <path
-                  d="m 3,15 v 6 h 6"
+                  d="m 12,8 v 5"
                   stroke="currentColor"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   id="path4"
+                  style="display: none"
                 />
                 <path
-                  d="m 21,3 -7.5,7.5"
+                  d="m 11.9945,16 h 0.009"
                   stroke="currentColor"
-                  stroke-width="1.5"
+                  stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   id="path6"
+                  style="display: none"
                 />
-                <path
-                  d="M 10.5,13.5 3,21"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  id="path8"
-                />
-              </g>
-              <g id="g708" transform="rotate(90,12,12)">
-                <path
-                  d="M 21,9 V 3 h -6"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  id="path700"
-                />
-                <path
-                  d="m 3,15 v 6 h 6"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  id="path702"
-                />
-                <path
-                  d="m 21,3 -7.5,7.5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  id="path704"
-                />
-                <path
-                  d="M 10.5,13.5 3,21"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  id="path706"
-                />
-              </g>
-            </svg>
-          </a>
-          <a href="about.html" title="Behind-the-scenes details" class="m-1">
-            <!-- prettier ignore -->
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 24 24"
-              fill="none"
-              version="1.1"
-              id="svg8"
-              xml:space="preserve"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:svg="http://www.w3.org/2000/svg"
-            >
-              <defs id="defs12" />
-              <path
-                d="M 12,22 C 17.5,22 22,17.5 22,12 22,6.5 17.5,2 12,2 6.5,2 2,6.5 2,12 2,17.5 6.5,22 12,22 Z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                id="path2"
-              />
-              <path
-                d="m 12,8 v 5"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                id="path4"
-                style="display: none"
-              />
-              <path
-                d="m 11.9945,16 h 0.009"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                id="path6"
-                style="display: none"
-              />
-              <g
-                id="g330"
-                transform="matrix(1.3795656,0,0,1.3795656,-51.460087,-2.2164166)"
-              >
-                <path
-                  d="m 46.0001,11.36 v -0.21 c 0,-0.68 0.42,-1.04 0.84,-1.32999 0.41,-0.28 0.8199,-0.63999 0.8199,-1.29999 0,-0.92 -0.7399,-1.66003 -1.6599,-1.66003 -0.92,0 -1.66,0.74003 -1.66,1.66003"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  id="path151"
-                />
-                <path
-                  d="m 45.9955,13.75 h 0.009"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  id="path153"
-                />
-              </g>
-            </svg>
+                <g
+                  id="g330"
+                  transform="matrix(1.3795656,0,0,1.3795656,-51.460087,-2.2164166)"
+                >
+                  <path
+                    d="m 46.0001,11.36 v -0.21 c 0,-0.68 0.42,-1.04 0.84,-1.32999 0.41,-0.28 0.8199,-0.63999 0.8199,-1.29999 0,-0.92 -0.7399,-1.66003 -1.6599,-1.66003 -0.92,0 -1.66,0.74003 -1.66,1.66003"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    id="path151"
+                  />
+                  <path
+                    d="m 45.9955,13.75 h 0.009"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    id="path153"
+                  />
+                </g>
+              </svg>
+            </button>
           </a>
           <button id="theme-change" title="change theme" class="m-1">
             <svg

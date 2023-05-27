@@ -30,8 +30,8 @@ body {
   --linkcol      : var(--black);
   --selection-bg : var(--lighttan);
   --svgbtncol    : var(--linkcol);
-
-
+  --scr-thumb    : var(--tan);
+  --scr-track    : var(--bgcol);
 
 }
 
@@ -43,8 +43,23 @@ body[data-theme="dark"] {
   --time-selected: var(--beige);
   --linkcol      : var(--cadet-gray);
   --selection-bg : var(--cadet-gray-tr);
+  --scr-thumb    : var(--square-passed);
 
+}
 
+*::-webkit-scrollbar {
+  width : 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+
+  background-color: var(--scr-track);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius   : 5px;
+  background-color: var(--scr-thumb);
 }
 
 *,
@@ -97,6 +112,10 @@ ul {
 
 ul {
   list-style-type: square;
+}
+
+li {
+  width: fit-content;
 }
 
 button {
@@ -200,4 +219,12 @@ div.flex-wrap {
 .last-grid.bg-time-selected {
   background      : transparent !important;
   background-color: var(--time-selected) !important;
+}
+
+span.current-date {
+  text-transform: lowercase;
+}
+
+span.current-date>span:nth-child(3) {
+  display: none;
 }
