@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rectangles</title>
+    <script type="module" src="assets/voodoo.js"></script>
+    <link rel="stylesheet" href="assets/base.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/sq.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+  </head>
+  <body class="rectangles">
+    <main class="flex flex-wrap justify-around p-2">
+      <noscript>
+        Sorry pal, but this won't work without JavaScript. You are probably
+        doing that for privacy reasons, and I do respect that. You can download
+        this website, inspect the source code, and run it locally. Or, you can
+        whitelist it in your browser/script blocker. I don't have any
+        third-party trackers on this website, and the code is open-sourced, so
+        there's not much to be worried about.
+      </noscript>
+      <section class="grid-container"></section>
+      <section class="text-container">
+        <h1 class="border-b-3 mb-0">Rectangles</h1>
+        <p>There are 144 rectangles.</p>
+        <p>Each rectangle represents 10 minutes of your day.</p>
+        <div class="flex flex-wrap items-center">
+          <div class="grid-item bg-time-passed m-1"></div>
+          <p>Time that has already passed today</p>
+        </div>
+        <div class="flex flex-wrap items-center">
+          <div class="grid-item m-1"></div>
+          <p>Time that you still have left today</p>
+        </div>
+        <div class="border-b-3">
+          <p>To put it into a perspective (hover or click):</p>
+          <ul>
+            <li
+              class="m-1 js-hover cursor-pointer"
+              title="30 rectangles - 5 hours"
+              data-rectangles="30"
+            >
+              Average psilocybin mushroom trip
+            </li>
+            <li
+              class="m-1 js-hover cursor-pointer"
+              title="45 rectangles - 7.5 hours"
+              data-rectangles="45"
+            >
+              A good night's sleep for adults
+            </li>
+            <li
+              class="m-1 js-hover cursor-pointer"
+              title="48 rectangles - 8 hours"
+              data-rectangles="48"
+            >
+              Average workday
+            </li>
+            <li
+              class="m-1 js-hover cursor-pointer"
+              title="96 rectangles - 16 hours"
+              data-rectangles="96"
+            >
+              Intermittent fasting (16/8)
+            </li>
+          </ul>
+        </div>
+        <section class="text-center p-1 mt-1 linkblock">
+          <a href="?full_screen=true" title="Toggle full screen" class="m-1">
+            <!-- prettier ignore -->
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              version="1.1"
+              id="svg10"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:svg="http://www.w3.org/2000/svg"
+            >
+              <defs id="defs14" />
+              <g id="g698">
+                <path
+                  d="M 21,9 V 3 h -6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  id="path2"
+                />
+                <path
+                  d="m 3,15 v 6 h 6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  id="path4"
+                />
+                <path
+                  d="m 21,3 -7.5,7.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  id="path6"
+                />
+                <path
+                  d="M 10.5,13.5 3,21"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  id="path8"
+                />
+              </g>
+              <g id="g708" transform="rotate(90,12,12)">
+                <path
+                  d="M 21,9 V 3 h -6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  id="path700"
+                />
+                <path
+                  d="m 3,15 v 6 h 6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  id="path702"
+                />
+                <path
+                  d="m 21,3 -7.5,7.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  id="path704"
+                />
+                <path
+                  d="M 10.5,13.5 3,21"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  id="path706"
+                />
+              </g>
+            </svg>
+          </a>
+          <a href="about.html" title="Behind-the-scenes details" class="m-1">
+            <!-- prettier ignore -->
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              version="1.1"
+              id="svg8"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:svg="http://www.w3.org/2000/svg"
+            >
+              <defs id="defs12" />
+              <path
+                d="M 12,22 C 17.5,22 22,17.5 22,12 22,6.5 17.5,2 12,2 6.5,2 2,6.5 2,12 2,17.5 6.5,22 12,22 Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                id="path2"
+              />
+              <path
+                d="m 12,8 v 5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                id="path4"
+                style="display: none"
+              />
+              <path
+                d="m 11.9945,16 h 0.009"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                id="path6"
+                style="display: none"
+              />
+              <g
+                id="g330"
+                transform="matrix(1.3795656,0,0,1.3795656,-51.460087,-2.2164166)"
+              >
+                <path
+                  d="m 46.0001,11.36 v -0.21 c 0,-0.68 0.42,-1.04 0.84,-1.32999 0.41,-0.28 0.8199,-0.63999 0.8199,-1.29999 0,-0.92 -0.7399,-1.66003 -1.6599,-1.66003 -0.92,0 -1.66,0.74003 -1.66,1.66003"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  id="path151"
+                />
+                <path
+                  d="m 45.9955,13.75 h 0.009"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  id="path153"
+                />
+              </g>
+            </svg>
+          </a>
+          <button id="theme-change" title="change theme" class="m-1">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 16C10 14.34 10 13 13 13H17C20 13 20 12 20 10V8C20 6 20 5 17 5H16"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 2H8C7.35 3.95 7.35 6.05 8 8H12C12.65 6.05 12.65 3.95 12 2Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8 2H7C5 2 4 3 4 5C4 7 5 8 7 8H8C7 6 7 4 8 2Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M13 2H12C13 4 13 6 12 8H13C15 8 16 7 16 5C16 3 15 2 13 2Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9.5 22H10.5C12 22 12 21 12 20.5V17.5C12 17 12 16 10.5 16H9.5C8 16 8 17 8 17.5V20.5C8 21 8 22 9.5 22Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

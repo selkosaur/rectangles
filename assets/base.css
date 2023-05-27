@@ -1,0 +1,203 @@
+:root {
+  --blue         : #a9d2ef;
+  --green        : #BBCAAB;
+  --black        : #2d3134;
+  --gray         : #a9aab1;
+  --beige        : #eae3d1;
+  --peach        : #d2a193;
+  --darkpeach    : #c3816f;
+  --tan          : #cfc5ab;
+  --lighttan     : #cbc1a880;
+  --darkgray     : #4f4e4e;
+  --periwinkle   : #dde7ff;
+  --white        : #ffffffff;
+  --davys-gray   : #585b5fff;
+  --paynes-gray  : #616b77ff;
+  --slate-gray   : #7a8594ff;
+  --cadet-gray   : #959ca4ff;
+  --cadet-gray-tr: rgba(149, 156, 164, 0.68);
+  --platinum     : #d8dbdcff;
+  --paynes-gray-2: #5d6a7bff;
+
+}
+
+body {
+  --bgcol        : var(--beige);
+  --textcol      : var(--darkgray);
+  --grid-border  : var(--darkpeach);
+  --square-passed: var(--peach);
+  --time-selected: var(--green);
+  --linkcol      : var(--black);
+  --selection-bg : var(--lighttan);
+  --svgbtncol    : var(--linkcol);
+
+
+
+}
+
+body[data-theme="dark"] {
+  --bgcol        : var(--paynes-gray-2);
+  --textcol      : var(--platinum);
+  --grid-border  : var(--cadet-gray);
+  --square-passed: var(--slate-gray);
+  --time-selected: var(--beige);
+  --linkcol      : var(--cadet-gray);
+  --selection-bg : var(--cadet-gray-tr);
+
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background-color: var(--selection-bg);
+}
+
+html {
+  box-sizing: border-box;
+  font-size : 62.5%;
+  /* scaling down so that 1rem equals to 10px */
+}
+
+body {
+  background-color: var(--bgcol);
+  color           : var(--textcol);
+  font-family     : "Assistant", 'Segoe UI', Roboto, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-size       : 1.8rem;
+  font-weight     : 400;
+  line-height     : 1.6;
+  margin          : 0 auto;
+  max-width       : 135rem;
+  width           : 95%;
+}
+
+a {
+  color          : var(--linkcol);
+  text-decoration: none;
+  font-weight    : bold;
+}
+
+h1 {
+  font-size     : 5.2rem;
+  line-height   : 1.5;
+  font-weight   : 800;
+  letter-spacing: -.025em;
+}
+
+ol,
+ul {
+  list-style-position: inside;
+  margin             : 0;
+  padding            : 0;
+}
+
+ul {
+  list-style-type: square;
+}
+
+button {
+  background-color  : inherit;
+  box-shadow        : inherit;
+  border            : inherit;
+  color             : var(--svgbtncol);
+  cursor            : pointer;
+  appearance        : none;
+  -webkit-appearance: none;
+  padding           : 0;
+  height            : auto;
+}
+
+section.linkblock a {
+  display: inline-block;
+}
+
+.grid-container {
+  display              : grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  grid-template-rows   : repeat(auto-fit, minmax(5rem, 1fr));
+  grid-column-gap      : 4px;
+  grid-row-gap         : 4px;
+  width                : 100%;
+  max-width            : 690px;
+  margin               : 1rem;
+}
+
+.grid-item {
+  border       : .25rem solid var(--grid-border);
+  border-radius: 0.4rem;
+  margin       : .15rem;
+  height       : 4.5rem;
+  width        : 4.6rem;
+  transition   : all .5s ease-in;
+}
+
+/* homegrown functional CSS framework */
+
+.flex {
+  display: flex !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap-reverse;
+}
+
+div.flex-wrap {
+  flex-wrap: nowrap;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.justify-around {
+  justify-content: space-around !important;
+}
+
+.bg-time-passed {
+  background-color: var(--square-passed) !important;
+}
+
+.bg-time-selected {
+  background-color: var(--time-selected) !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.mb-0 {
+  margin: 0 !important;
+}
+
+.m-1 {
+  margin: 1rem !important;
+}
+
+.mt-1 {
+  margin-top: 1rem !important;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.border-b-3 {
+  border-bottom: 0.3rem solid !important;
+}
+
+.last-grid.bg-time-selected {
+  background      : transparent !important;
+  background-color: var(--time-selected) !important;
+}
