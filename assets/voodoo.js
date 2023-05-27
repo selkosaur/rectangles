@@ -1,6 +1,7 @@
 "use strict";
 import { theme } from "./theme.js";
 import { displaydate } from "./date-time.js";
+import updatePage from "./newtab.js";
 displaydate(".display-date");
 const createGrid = () => {
   for (let i = 0; i < 12 * 12; i++) {
