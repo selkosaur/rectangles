@@ -1,8 +1,9 @@
 "use strict";
 import { theme } from "./theme.js";
-import { displaydate } from "./date-time.js";
+import CalClock from "./calclock.js";
 import updatePage from "./newtab.js";
-displaydate(".display-date");
+
+let cal = new CalClock("separate", ".display-date", ".clock");
 const createGrid = () => {
   for (let i = 0; i < 12 * 12; i++) {
     let gridItem = document.createElement("div");

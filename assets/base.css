@@ -1,15 +1,29 @@
 :root {
-  --blue         : #a9d2ef;
-  --green        : #BBCAAB;
-  --black        : #2d3134;
-  --gray         : #a9aab1;
-  --beige        : #eae3d1;
-  --peach        : #d2a193;
-  --darkpeach    : #c3816f;
-  --tan          : #cfc5ab;
-  --lighttan     : #cbc1a880;
-  --darkgray     : #4f4e4e;
-  --periwinkle   : #dde7ff;
+  --blue     : #a9d2ef;
+  --green    : #D9E0CE;
+  --black    : #2d3134;
+  --gray     : #a9aab1;
+  --beige    : #eae3d1;
+  --lighttan : #FCF9EA;
+  --lighttan2: #F2EDE3;
+  --lighttan3: #FAFAEE;
+
+  --brown    : #9A9283;
+  --darkbrown: #726B61;
+
+
+
+
+  --peach          : #d2a193;
+  --darkpeach      : #c3816f;
+  --tan            : #cfc5ab;
+  --lighttan       : #cbc1a880;
+  --darkgray       : #4f4e4e;
+  --periwinkle     : #dde7ff;
+  --periwinkle-dark: #759fff;
+  --periwinkle-mid : #93a5cc;
+
+
   --white        : #ffffffff;
   --davys-gray   : #585b5fff;
   --paynes-gray  : #616b77ff;
@@ -22,12 +36,12 @@
 }
 
 body {
-  --bgcol        : var(--beige);
-  --textcol      : var(--darkgray);
-  --grid-border  : var(--darkpeach);
-  --square-passed: var(--peach);
-  --time-selected: var(--green);
-  --linkcol      : var(--black);
+  --bgcol        : var(--lighttan2);
+  --textcol      : var(--brown);
+  --grid-border  : var(--periwinkle-mid);
+  --square-passed: var(--periwinkle);
+  --time-selected: var(--periwinkle-mid);
+  --linkcol      : var(--darkbrown);
   --selection-bg : var(--lighttan);
   --svgbtncol    : var(--linkcol);
   --scr-thumb    : var(--tan);
@@ -221,10 +235,20 @@ div.flex-wrap {
   background-color: var(--time-selected) !important;
 }
 
-span.current-date {
+span.current-date,
+h1.display-date,
+.clock {
   text-transform: lowercase;
+  text-align    : right;
+  padding-right : 1.5rem !important;
 }
 
-span.current-date>span:nth-child(3) {
+span.current-date>span:nth-child(3),
+h1.display-date span:nth-child(4) {
   display: none;
+}
+
+.clock {
+
+  margin: 0px 0px 0.5em 0px;
 }
