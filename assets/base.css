@@ -35,6 +35,12 @@
 
 }
 
+* {
+  /* transition-property       : color, background-color;
+  transition-duration       : 0.2s;
+  transition-timing-function: ease-in; */
+}
+
 body {
   --bgcol        : var(--lighttan2);
   --textcol      : var(--brown);
@@ -59,6 +65,45 @@ body[data-theme="dark"] {
   --selection-bg : var(--cadet-gray-tr);
   --scr-thumb    : var(--square-passed);
 
+}
+
+*[data-theme=lavender] {
+  --bgcol        : #dadce7;
+  --textcol      : #91939a;
+  --grid-border  : #b5b7c0;
+  --square-passed: #f0f0ff;
+  --time-selected: oklch(79.08% 0.0335 273.29);
+  --linkcol      : #91939a;
+  --selection-bg : oklch(from var(--textcol) l c h / 0.3);
+  --svgbtncol    : var(--linkcol);
+  --scr-thumb    : #91939a;
+  --scr-track    : var(--bgcol);
+}
+
+*[data-theme=honeydew] {
+  --bgcol        : #d7e1d5;
+  --textcol      : #585f57;
+  --grid-border  : #748973;
+  --square-passed: #9fac9d;
+  --time-selected: #585f57;
+  --linkcol      : #585f57;
+  --selection-bg : oklch(from var(--textcol) l c h / 0.3);
+  --svgbtncol    : var(--linkcol);
+  --scr-thumb    : var(--square-passed);
+  --scr-track    : var(--bgcol);
+}
+
+*[data-theme=cantaloupe] {
+  --bgcol        : #eddabc;
+  --textcol      : #7E6948D3;
+  --grid-border  : #a0937f;
+  --square-passed: #7E694870;
+  --time-selected: #a08865;
+  --linkcol      : #a08865;
+  --selection-bg : oklch(from var(--textcol) l c h / 0.3);
+  --svgbtncol    : var(--linkcol);
+  --scr-thumb    : var(--square-passed);
+  --scr-track    : var(--bgcol);
 }
 
 *::-webkit-scrollbar {

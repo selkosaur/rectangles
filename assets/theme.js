@@ -1,21 +1,49 @@
+class Cycle extends Array {
+  constructor(...input) {
+    input ? super(...input) : super();
+  }
+  #count = 0;
+  next() {
+    const index = this.#count % this.length;
+    this.#count++;
+
+    return this[index];
+  }
+  previous() {
+    this.#count <= 1 ? (this.#count = this.length) : this.#count--;
+
+    const index = (this.#count - 1) % this.length;
+    return this[index];
+  }
+  item(index) {
+    return this[index % this.length];
+  }
+  setCount(index) {
+    this.#count = index;
+  }
+}
+
 async function loadtips() {
   const tips = await import("./tooltips.js");
 }
 loadtips();
+const themelist = new Cycle(
+  "light",
+  "lavender",
+  "honeydew",
+  "cantaloupe",
+  "dark"
+);
 
 export const theme = (() => {
   const bodyEl = document.querySelector("body");
-
   const storedpref = (() => {
     let pref = localStorage.getItem("rectangle-theme");
     if (pref) {
-      switch (pref) {
-        case "dark":
-          bodyEl.setAttribute("data-theme", "dark");
-          break;
-
-        default:
-          break;
+      bodyEl.setAttribute("data-theme", pref);
+      if (pref) {
+        const currentIndex = themelist.findIndex((item) => item === pref);
+        currentIndex > -1 && themelist.setCount(currentIndex + 1);
       }
     }
   })();
@@ -25,14 +53,10 @@ export const theme = (() => {
   };
 
   const toggleTheme = (e) => {
-    let newtheme = "dark";
-    if (bodyEl.hasAttribute("data-theme")) {
-      let prev = bodyEl.getAttribute("data-theme");
+    const nexttheme = themelist.next();
 
-      prev == "dark" ? (newtheme = "light") : (newtheme = "dark");
-    }
-    bodyEl.setAttribute("data-theme", newtheme);
-    saveLocal(newtheme);
+    bodyEl.setAttribute("data-theme", nexttheme);
+    saveLocal(nexttheme);
   };
 
   const themebtn = document.getElementById("theme-change");

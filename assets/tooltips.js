@@ -1,5 +1,5 @@
-import tippy, * as tiptools from "https://esm.run/tippy.js";
-import tipcss from "https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy.css" assert { type: "css" };
+import tippy, * as tiptools from "./tippyes.js";
+import tipcss from "./tippydefault.css" assert { type: "css" };
 document.adoptedStyleSheets = [tipcss];
 
 const tips = tippy("[title]", {
