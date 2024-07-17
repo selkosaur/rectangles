@@ -1,5 +1,5 @@
 import tippy, * as tiptools from "./tippyes.js";
-import tipcss from "./tippydefault.css" assert { type: "css" };
+import tipcss from "./tippydefault.css" with { type: "css" };
 document.adoptedStyleSheets = [tipcss];
 
 const tips = tippy("[title]", {
