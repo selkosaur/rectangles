@@ -45,6 +45,28 @@ const fillGrid = () => {
   lastUncoloredGridItem.style = `background: linear-gradient(to right, var(--square-passed) ${remainderBlock}%, transparent 0%)`;
 };
 
+/**
+ * @type {HTMLAnchorElement|null}
+ */
+const fullScreenButton = document.querySelector(`a[data-action="fullscreen"]`);
+
+/**
+ * Toggle fullscreen (from click on toggle button)
+ * @param {MouseEvent} e
+ * @returns
+ */
+const reqFullscreen = async (e) => {
+  e.preventDefault();
+  const fsEl = document.fullscreenElement;
+
+  return fsEl
+    ? await document.exitFullscreen()
+    : await document.documentElement.requestFullscreen();
+};
+
+fullScreenButton?.addEventListener("click", reqFullscreen);
+
+// potentially change this to different setting, like a zen mode kind of thing
 const enableFullScreen = () => {
   const isFullScreen =
     new URLSearchParams(window.location.search).get("full_screen") === "true";

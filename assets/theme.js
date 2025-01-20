@@ -135,8 +135,8 @@ export const theme = (() => {
   };
 
   const faviconColorKeys = {
-    gridBorder: `--grid-border`,
-    squarePassed: `--square-passed`,
+    textColor: `--textcol`,
+    bgColor: `--bgcol`,
   };
 
   const faviconColorVNames = Object.values(faviconColorKeys);
