@@ -1,6 +1,7 @@
-import tippy, { createSingleton} from "./tippyes.js";
+import tippy, {createSingleton, roundArrow} from "./tippyes.js";
 import tipcss from "./tippydefault.css" with { type: "css" };
-document.adoptedStyleSheets = [...document.adoptedStyleSheets,tipcss];
+import tippyarrowcss from "./tippysvgarrow.css" with {type: "css"};
+document.adoptedStyleSheets = [...document.adoptedStyleSheets,tipcss, tippyarrowcss];
 
 /**
  * @typedef {Object} TippyInstance
@@ -28,6 +29,9 @@ document.adoptedStyleSheets = [...document.adoptedStyleSheets,tipcss];
  * @property {Function} unmount - Function to unmount the tooltip.
  */
 
+tippy.setDefaultProps({
+  arrow:roundArrow
+})
 
 /**
  * @type {Array<TippyInstance>}
