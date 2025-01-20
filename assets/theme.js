@@ -1,3 +1,6 @@
+import { applyFavicon } from "./themed-favicon.js";
+import { isNewTab } from "./newtab.js";
+
 /**
  * @template T
  * @class
@@ -67,7 +70,7 @@ const themes = {
 /**
  * @type {Cycle<ThemeName>}
  */
-const themelist = new Cycle(Object.keys(themes));
+const themelist = new Cycle(...Object.keys(themes));
 
 export const theme = (() => {
   const THEME_STORAGE_KEY = "rectangle-theme";
@@ -83,11 +86,32 @@ export const theme = (() => {
   };
 
   /**
+   * @overload
+   * @param {string[]} varName An array of css variable names to get the value of.
+   * @param {HTMLElement} [element] Defaults to `document.body`.
+   * @returns {string[]} An array of computed values in the same order as the array.
+   */
+
+  /**
+   * Get the computed value of a css variable.
+   * @overload
+   * @param {string} varName variable name to check (including the preceding dashes).
+   * @param {HTMLElement} [element] Defaults to `document.body`.
+   * @returns {string} the value of the variable.
+   */
+  const getCssVar = (varName, element = document.body) => {
+    const computedStyle = getComputedStyle(element);
+    const result = Array.isArray(varName)
+      ? varName.map((v) => computedStyle.getPropertyValue(v))
+      : computedStyle.getPropertyValue(varName);
+    return result;
+  };
+
+  /**
    * Determines the header color based on currently applied theme and sets the value of the meta tag to it.
    */
   const setHeaderColor = () => {
-    const computedStyle = getComputedStyle(document.body);
-    const hcol = computedStyle.getPropertyValue(HEADER_COLOR_VAR);
+    const hcol = getCssVar(HEADER_COLOR_VAR);
 
     /**
      * Creates color theme meta tag and appends to document head.
@@ -110,6 +134,18 @@ export const theme = (() => {
     metaTag.content = hcol;
   };
 
+  const faviconColorKeys = {
+    gridBorder: `--grid-border`,
+    squarePassed: `--square-passed`,
+  };
+
+  const faviconColorVNames = Object.values(faviconColorKeys);
+
+  const updateFavForTheme = () => {
+    const [color1, color2] = getCssVar(faviconColorVNames);
+    applyFavicon(color1, color2);
+  };
+
   /**
    * Apply the specified color theme.
    * @param {ThemeName} pref Name of the theme.
@@ -118,6 +154,7 @@ export const theme = (() => {
   const apply = (pref, withSave = true) => {
     bodyEl.setAttribute("data-theme", pref);
     setHeaderColor();
+    !isNewTab && updateFavForTheme();
     withSave && saveLocal(pref);
   };
 
