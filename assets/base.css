@@ -57,7 +57,7 @@ body[data-theme="dark"] {
   --textcol      : var(--platinum);
   --grid-border  : var(--cadet-gray);
   --square-passed: var(--slate-gray);
-  --time-selected: var(--beige);
+  --time-selected: rgba(202, 210, 222, 0.719);
   --linkcol      : var(--cadet-gray);
   --selection-bg : var(--cadet-gray-tr);
   --scr-thumb    : var(--square-passed);
