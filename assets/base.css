@@ -33,6 +33,7 @@
   --platinum     : #d8dbdcff;
   --paynes-gray-2: #5d6a7bff;
 
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 * {
@@ -108,7 +109,7 @@ body[data-theme="dark"] {
   --svgbtncol    : var(--linkcol);
   --scr-thumb    : var(--square-passed);
   --scr-track    : var(--bgcol);
-  --header-color : var(--square-passed);
+  --header-color : var(--linkcol);
 }
 
 *::-webkit-scrollbar {
