@@ -67,13 +67,7 @@ const themes = {
 /**
  * @type {Cycle<ThemeName>}
  */
-const themelist = new Cycle(
-  "light",
-  "lavender",
-  "honeydew",
-  "cantaloupe",
-  "dark"
-);
+const themelist = new Cycle(Object.keys(themes));
 
 export const theme = (() => {
   const THEME_STORAGE_KEY = "rectangle-theme";
