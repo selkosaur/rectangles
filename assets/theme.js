@@ -76,6 +76,8 @@ const themelist = new Cycle(
 );
 
 export const theme = (() => {
+  const THEME_STORAGE_KEY = "rectangle-theme";
+  const HEADER_COLOR_VAR = "--header-color";
   const bodyEl = document.querySelector("body");
 
   /**
@@ -83,7 +85,35 @@ export const theme = (() => {
    * @param {ThemeName} theme
    */
   const saveLocal = (theme) => {
-    localStorage.setItem("rectangle-theme", theme);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+  };
+
+  /**
+   * Determines the header color based on currently applied theme and sets the value of the meta tag to it.
+   */
+  const setHeaderColor = () => {
+    const computedStyle = getComputedStyle(document.body);
+    const hcol = computedStyle.getPropertyValue(HEADER_COLOR_VAR);
+
+    /**
+     * Creates color theme meta tag and appends to document head.
+     *
+     */
+    const createMetaTag = () => {
+      const m = document.createElement("meta");
+      m.name = `theme-color`;
+      document.head.append(m);
+      return m;
+    };
+
+    /**
+     * @type {HTMLMetaElement}
+     */
+    const metaTag =
+      document.head.querySelector(`meta[name="theme-color"]`) ??
+      createMetaTag();
+
+    metaTag.content = hcol;
   };
 
   /**
@@ -93,11 +123,12 @@ export const theme = (() => {
    */
   const apply = (pref, withSave = true) => {
     bodyEl.setAttribute("data-theme", pref);
+    setHeaderColor();
     withSave && saveLocal(pref);
   };
 
   const storedpref = (() => {
-    const pref = localStorage.getItem("rectangle-theme");
+    const pref = localStorage.getItem(THEME_STORAGE_KEY);
     if (pref) {
       apply(pref, false);
 
